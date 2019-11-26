@@ -9,8 +9,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FizzBuzzTest {
-
-    @Test    void EmptyString(){check(0,""); }
     @Test    void ThreeIsFizz(){check(3,"Fizz"); }
     @Test    void FiveIsBuzz(){check(5,"Buzz"); }
     @Test    void Multiple3and5(){check(15,"FizzBuzz");}

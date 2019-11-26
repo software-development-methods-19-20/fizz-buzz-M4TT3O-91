@@ -1,22 +1,35 @@
 package dssc;
 
-public class FizzBuzz {
+import java.util.ArrayList;
+import java.util.List;
 
-    public void FizzBuzzPrint(){
-        for (int i = 0; i < 105 ; i++) {
-            System.out.println(test(i));
+public class FizzBuzz {
+    static List<Pippo> list;
+    {
+        list=new ArrayList<>();
+        list.add(new Pippo(3,"Fizz"));
+        list.add(new Pippo(5,"Buzz"));
+        list.add(new Pippo(7,"Bang"));
+
+    }
+    private class Pippo{
+        public int numero;
+        public String string;
+
+        public Pippo(int n , String s){
+            this.numero=n;
+            this.string=s;
         }
     }
 
     public static String test(Integer input) {
-        String test = "";
-        if (input == 0)
-            return "";
-        else {
-            test += (input % 3) == 0 ? "Fizz" : "";
-            test += (input % 5) == 0 ? "Buzz" : "";
-            test += (input % 7) == 0 ? "Bang" : "";
+        String result="";
+        for (Pippo item : list) {
+            if (input % item.numero == 0)
+                result += item.string;
         }
-        return test;
+        if(result.length()==0)
+            result+=String.valueOf(input);
+        return result;
     }
 }
